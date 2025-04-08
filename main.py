@@ -22,7 +22,49 @@ def list_roblox_games(content_list):
     else:
         print("No content available.")
 
-# TODO: Add Roblox game details from user input. Assigned to: Annie  
+# TODO: Add Roblox game details from user input. Assigned to: Annie 
+def add_roblox_game():
+    print("---[Add Game(s)]---")
+
+    # Collect game details from user input
+    title = input("Enter Title: ")
+    genre = input("Enter Genre: ")
+    creator = input("Enter the name of the Creator: ")
+    year = int(input("Enter year released: "))
+
+    # Display classification options
+    print("Choose Classification:")
+    print("1. All Ages")
+    print("2. 9+")
+    print("3. 13+")
+    print("4. 17+")
+
+    # Mapping for classification based on user input
+    classification_map = {
+        "1": "All Ages",
+        "2": "9+",
+        "3": "13+",
+        "4": "17+"
+    }
+
+    # Get the user's classification choice with default fallback
+    classification_choice = input("Enter choice (1-4): ")
+    classification = classification_map.get(classification_choice, "All Ages") 
+
+    # Create dictionary for the new game
+    roblox_game = {
+        "Title": title,
+        "Genre": genre,
+        "Creator": creator,
+        "Year": year,
+        "Game Classification": classification
+    }
+
+    # Append the game dictionary to the roblox list
+    roblox.append(roblox_game)
+
+    # Confirm that the game was added
+    print(f"'{title}' has been added to the game list with ID {len(roblox)}.") 
 # TODO: Update a game using its Game ID. Assigned to: Keith  
 # TODO: Delete a game by Game ID. Assigned to: Mikee  
 # TODO: Search for a game by title. Assigned to: Kalelle  
@@ -44,7 +86,7 @@ def main_menu():
             case 1:
                 pass
             case 2:
-                pass
+                add_roblox_game()
             case 3:
                 pass
             case 4:
