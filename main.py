@@ -1,10 +1,33 @@
 # Group: PolyTech | Data: Roblox Game Directory
 
 # TODO: Design Roblox game list and display functions. Assigned to: Zyra  
+roblox = [
+    {
+        "Title": "Dress to Impress",
+        "Genre": "Fashion Roleplay",
+        "Creator": "Gigi",
+        "Year": 2023,
+        "Game Classification": "9+"
+    }
+]
+
+def list_roblox_games(content_list):
+    if content_list:
+        print("-----[List of Games]-----")
+        for index, game in enumerate(content_list, 1):
+            print(f"Roblox Game: {index}")
+            for key, value in game.items():
+                print(f"\t{key}: {value}")
+            print()
+    else:
+        print("No content available.")
+
 # TODO: Add Roblox game details from user input. Assigned to: Annie  
 # TODO: Update a game using its Game ID. Assigned to: Keith  
 # TODO: Delete a game by Game ID. Assigned to: Mikee  
 # TODO: Search for a game by title. Assigned to: Kalelle  
+
+
 
 def main_menu():
     while True:
