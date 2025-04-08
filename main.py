@@ -15,7 +15,7 @@ def main_menu():
         print("4. Delete Roblox Games")
         print("5. Search Roblox Games")
         print("6. Exit")
-        choice = int(input("Enter your choice: "))
+        choice = input("Enter your choice: ")
 
         match choice:
             case 1:
