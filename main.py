@@ -21,24 +21,20 @@ def list_roblox_games(content_list):
     else:
         print("No content available.")
 
-# TODO: Add Roblox game details from user input. Assigned to: Annie 
 def add_roblox_game():
     print("---[Add Game(s)]---")
-
-    # Collect game details from user input
+    print("Enter the details of the game you want to add:")
     title = input("Enter Title: ")
     genre = input("Enter Genre: ")
     creator = input("Enter the name of the Creator: ")
     year = int(input("Enter year released: "))
 
-    # Display classification options
     print("Choose Classification:")
     print("1. All Ages")
     print("2. 9+")
     print("3. 13+")
     print("4. 17+")
 
-    # Mapping for classification based on user input
     classification_map = {
         "1": "All Ages",
         "2": "9+",
@@ -46,11 +42,9 @@ def add_roblox_game():
         "4": "17+"
     }
 
-    # Get the user's classification choice with default fallback
     classification_choice = input("Enter choice (1-4): ")
     classification = classification_map.get(classification_choice, "All Ages") 
 
-    # Create dictionary for the new game
     roblox_game = {
         "Title": title,
         "Genre": genre,
@@ -59,10 +53,8 @@ def add_roblox_game():
         "Game Classification": classification
     }
 
-    # Append the game dictionary to the roblox list
     roblox.append(roblox_game)
 
-    # Confirm that the game was added
     print(f"'{title}' has been added to the game list with ID {len(roblox)}.") 
 
 def update_roblox_game():
