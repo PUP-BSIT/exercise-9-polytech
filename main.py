@@ -106,6 +106,7 @@ def delete_roblox_game():
             deleted = roblox.pop(index)
             print(f"'{deleted['Title']}' has been deleted.")
             return
+        
     print("Roblox Game title not found.")
 
 def search_roblox_game():
