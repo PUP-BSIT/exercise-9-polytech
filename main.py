@@ -66,7 +66,6 @@ def add_roblox_game():
     # Confirm that the game was added
     print(f"'{title}' has been added to the game list with ID {len(roblox)}.") 
 
-# TODO: Update a game using its Game ID. Assigned to: Keith
 def update_roblox_game():
     print("-----[Update Roblox Game]-----")
     title_input = input("Enter the Game Title you want to update: ").lower()
