@@ -121,7 +121,7 @@ def delete_roblox_game():
 
 def search_roblox_game():
     search_title = input("\nEnter title to search: ").lower()
-
+    print("-----[Search Roblox Game]-----")
     for index, game in enumerate(roblox, 1):
         #check if input is in the Title key of roblox list
         if search_title in game["Title"].strip().lower():
@@ -161,4 +161,3 @@ def main_menu():
                 print("Invalid choice. Please try again")
 
 main_menu()
-# TODO: Run program loop to execute all features. Assigned to: Everyone
