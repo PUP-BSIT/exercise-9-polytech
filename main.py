@@ -65,7 +65,42 @@ def add_roblox_game():
 
     # Confirm that the game was added
     print(f"'{title}' has been added to the game list with ID {len(roblox)}.") 
-# TODO: Update a game using its Game ID. Assigned to: Keith  
+
+# TODO: Update a game using its Game ID. Assigned to: Keith
+def update_roblox_game():
+    print("-----[Update Roblox Game]-----")
+    title_input = input("Enter the Game Title you want to update: ").lower()
+    for index, game in enumerate(roblox):
+        if game["Title"].lower() == title_input:
+            title = input("Enter new Title: ")
+            genre = input("Enter new Genre: ")
+            creator = input("Enter new Creator: ")
+            year = int(input("Enter new Year: "))
+
+            print("Choose New Classification:")
+            print("1. All Ages")
+            print("2. 9+")
+            print("3. 13+")
+            print("4. 17+")
+            classification_map = {
+                "1": "All Ages",
+                "2": "9+",
+                "3": "13+",
+                "4": "17+"
+            }
+            classification_choice = input("Enter choice (1-4): ")
+            classification = classification_map.get(classification_choice, "All Ages")
+
+            roblox[index] = {
+                "Title": title,
+                "Genre": genre,
+                "Creator": creator,
+                "Year": year,
+                "Game Classification": classification
+            }
+            print(f"'{title}' has been successfully updated.")
+            return
+    print("Roblox Game title not found.") 
 # TODO: Delete a game by Game ID. Assigned to: Mikee  
 # TODO: Search for a game by title. Assigned to: Kalelle  
 
@@ -84,11 +119,11 @@ def main_menu():
 
         match choice:
             case 1:
-                pass
+                list_roblox_games(roblox)
             case 2:
                 add_roblox_game()
             case 3:
-                pass
+                update_roblox_game()
             case 4:
                 pass
             case 5:
