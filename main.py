@@ -108,7 +108,16 @@ def update_roblox_game():
             return
 
     print("Roblox Game title not found.")
-# TODO: Delete a game by Game ID. Assigned to: Mikee
+
+def delete_roblox_game():
+    print("-----[Delete Game]-----")
+    title_input = input("Enter game title to delete: ").lower()
+    for index, game in enumerate(roblox):
+        if game["Title"].lower() == title_input:
+            deleted = roblox.pop(index)
+            print(f"'{deleted['Title']}' has been deleted.")
+            return
+    print("Roblox Game title not found.")
 
 def search_roblox_game():
     search_title = input("\nEnter title to search: ").lower()
@@ -142,7 +151,7 @@ def main_menu():
             case 3:
                 update_roblox_game()
             case 4:
-                pass
+                delete_roblox_game()
             case 5:
                 search_roblox_game()
             case 6:
