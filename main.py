@@ -113,7 +113,6 @@ def search_roblox_game():
     search_title = input("\nEnter title to search: ").lower()
     print("-----[Search Roblox Game]-----")
     for index, game in enumerate(roblox, 1):
-        #check if input is in the Title key of roblox list
         if search_title in game["Title"].strip().lower():
             print(f"\nMatch found in Game ID {index}:")
             for key, value in game.items():
