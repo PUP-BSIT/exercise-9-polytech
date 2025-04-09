@@ -110,8 +110,9 @@ def delete_roblox_game():
     print("Roblox Game title not found.")
 
 def search_roblox_game():
-    search_title = input("\nEnter title to search: ").lower()
     print("-----[Search Roblox Game]-----")
+    search_title = input("\nEnter title to search: ").lower()
+    
     for index, game in enumerate(roblox, 1):
         if search_title in game["Title"].strip().lower():
             print(f"\nMatch found in Game ID {index}:")
