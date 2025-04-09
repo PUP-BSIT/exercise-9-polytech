@@ -54,7 +54,6 @@ def add_roblox_game():
     }
 
     roblox.append(roblox_game)
-
     print(f"'{title}' has been added to the game list with ID {len(roblox)}.") 
 
 def update_roblox_game():
