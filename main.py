@@ -100,11 +100,21 @@ def update_roblox_game():
             }
             print(f"'{title}' has been successfully updated.")
             return
-    print("Roblox Game title not found.") 
-# TODO: Delete a game by Game ID. Assigned to: Mikee  
-# TODO: Search for a game by title. Assigned to: Kalelle  
+    print("Roblox Game title not found.")
+# TODO: Delete a game by Game ID. Assigned to: Mikee
 
+def search_roblox_game():
+    search_title = input("\nEnter title to search: ").lower()
 
+    for index, game in enumerate(roblox, 1):
+        #check if input is in the Title key of roblox list
+        if search_title in game["Title"].strip().lower():
+            print(f"\nMatch found in Game ID {index}:")
+            for key, value in game.items():
+                print(f"{key}: {value}")
+            break
+        else:
+            print("No matching game found.")
 
 def main_menu():
     while True:
@@ -127,7 +137,7 @@ def main_menu():
             case 4:
                 pass
             case 5:
-                pass
+                search_roblox_game()
             case 6:
                 print("Exiting the program.")
                 break
