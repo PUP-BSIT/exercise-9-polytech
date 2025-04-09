@@ -1,6 +1,6 @@
 # Group: PolyTech | Data: Roblox Game Directory
 
-# TODO: Design Roblox game list and display functions. Assigned to: Zyra  
+
 roblox = [
     {
         "Title": "Dress to Impress",
