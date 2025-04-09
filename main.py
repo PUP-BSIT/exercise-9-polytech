@@ -70,6 +70,7 @@ def add_roblox_game():
 def update_roblox_game():
     print("-----[Update Roblox Game]-----")
     title_input = input("Enter the Game Title you want to update: ").lower()
+
     for index, game in enumerate(roblox):
         if game["Title"].lower() == title_input:
             title = input("Enter new Title: ")
@@ -82,14 +83,18 @@ def update_roblox_game():
             print("2. 9+")
             print("3. 13+")
             print("4. 17+")
+
             classification_map = {
                 "1": "All Ages",
                 "2": "9+",
                 "3": "13+",
                 "4": "17+"
             }
+
             classification_choice = input("Enter choice (1-4): ")
-            classification = classification_map.get(classification_choice, "All Ages")
+            classification = classification_map.get(
+                classification_choice, "All Ages"
+            )
 
             roblox[index] = {
                 "Title": title,
@@ -98,13 +103,25 @@ def update_roblox_game():
                 "Year": year,
                 "Game Classification": classification
             }
+
             print(f"'{title}' has been successfully updated.")
             return
-    print("Roblox Game title not found.") 
-# TODO: Delete a game by Game ID. Assigned to: Mikee  
-# TODO: Search for a game by title. Assigned to: Kalelle  
 
+    print("Roblox Game title not found.")
+# TODO: Delete a game by Game ID. Assigned to: Mikee
 
+def search_roblox_game():
+    search_title = input("\nEnter title to search: ").lower()
+
+    for index, game in enumerate(roblox, 1):
+        #check if input is in the Title key of roblox list
+        if search_title in game["Title"].strip().lower():
+            print(f"\nMatch found in Game ID {index}:")
+            for key, value in game.items():
+                print(f"{key}: {value}")
+            break
+        else:
+            print("No matching game found.")
 
 def main_menu():
     while True:
@@ -127,7 +144,7 @@ def main_menu():
             case 4:
                 pass
             case 5:
-                pass
+                search_roblox_game()
             case 6:
                 print("Exiting the program.")
                 break
