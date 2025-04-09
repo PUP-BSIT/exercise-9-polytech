@@ -129,8 +129,8 @@ def search_roblox_game():
             for key, value in game.items():
                 print(f"{key}: {value}")
             break
-        else:
-            print("No matching game found.")
+    else:
+        print("No matching game found.")
 
 def main_menu():
     while True:
