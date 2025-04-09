@@ -84,7 +84,7 @@ def main_menu():
 
         match choice:
             case 1:
-                pass
+                list_roblox_games(roblox)
             case 2:
                 add_roblox_game()
             case 3:
